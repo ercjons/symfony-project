@@ -1,0 +1,23 @@
+<form action="{{ path('ecommerce_searchProduct') }}" method="POST">
+    <div class="row">
+        <div class="col-md-3 pull-right">
+            <div class="input-group">
+                {{ form_errors(form) }}
+                <div class="form-group">
+                    {{ form_errors(form.search) }}
+                    <div class="col-md-12">
+                        {{ form_widget(form.search,{'attr':{'class': 'form-control search','placeholder': 'rechercher'}}) }}
+                    </div>
+                </div>
+                {{ form_rest(form) }}
+                <div class="input-group-btn">
+                    <button class="btn btn-primary" type="submit">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+

@@ -1,0 +1,25 @@
+<!-- FOOTER -->
+<div class="container">
+    <footer id="footer">
+        <div class="row">
+            <div class="col-md-8 pull-left leftBlock">
+                <p>&copy; Copyright {{ 'now'| date('Y') }} Bonnieres Informatique, Inc <br><br>
+                    {% render(controller('PagesBundle:Pages:module')) %}
+                    <a href=""><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+                    <a href=""><i class="fa fa-github" aria-hidden="true"></i></a>
+                    <a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    <a href=""><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+            </div>
+            {#<div class="col-md-offset-2"></div>#}
+
+            <div class="col-md-3 pull-right text-center rightBlock">
+                <p> Nous contacter : <br><br>
+                    <i class="fa fa-address-card" aria-hidden="true"></i>{{ adresse  }}<br>
+                    {{ commune }}<br><br>
+                    <i class="fa fa-phone" aria-hidden="true"></i>Télephone :  {{ telephone }} <br>
+                    <i class="fa fa-fax" aria-hidden="true"></i>  Fax :  {{ fax }}
+                </p>
+            </div>
+        </div>
+    </footer>
+</div>

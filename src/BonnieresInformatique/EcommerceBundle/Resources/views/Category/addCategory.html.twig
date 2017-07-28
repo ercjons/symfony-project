@@ -1,0 +1,78 @@
+{% extends '@Ecommerce/Administration/template/template.html.twig' %}
+
+{% block contenair %}
+
+
+        <div class="row text-center admin">
+
+            <div class="col-md-1 pull-left">
+                <button type="button" class="btn btn-default btn-sm">
+                    <span class="glyphicon glyphicon-hand-right"></span> Ajouter categorie
+                </button>
+            </div>
+        </div><!-- End/.row -->
+        <hr>
+
+        {% include '@Ecommerce/Partials/flash/flash.html.twig' %}
+
+        <div class="row">
+            <div class="col-md-8 text-center">
+                <div class="well">
+                    <form action="{{ path('ecommerce_addCategory') }}" method="POST" {{ form_enctype(form) }}>
+                        {{ form_errors(form) }}
+                        <div class="form-group">
+                            {{ form_label(form.name, "Nom de la catégorie",{'label_attr':{'class':'col-sm3 control-label'}}) }}
+                            <br>
+                            {{ form_errors(form.name) }}
+                            <div class="col-md-12">
+                                {{ form_widget(form.name, {'attr':{'class': 'form-control'}}) }}
+                            </div>
+                        </div>
+                        {{ form_rest(form) }}
+                        <hr>
+                        <input type="submit" class="btn btn-primary pull-right">
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-md-offset-1" id="sidebar_responsive">
+                {% include ('@Ecommerce/Partials/sidebar/sidebar_admin.html.twig')%}
+            </div>
+        </div><!-- End/.row -->
+
+        <hr>
+        <div class="row">
+            <div class="col-md-6 text-center">
+                <table class="table table-hover table-responsive text-center">
+                    <thead class="thead">
+                    <tr>
+                        <th  class="text-center">Liste des catégories</th>
+                        <th  class="text-center">Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for category in category  %}
+                        <tr>
+                            <td>
+                                <p>{{ category.name }}</p>
+                            </td>
+                            <td>
+                                <a href="{{ path('ecommerce_editCategory',{id:category.id}) }}" class="red-text" data-toggle="tooltip" data-placement="top" title="Modifier"><i class="fa fa-wrench"></i></a>&nbsp;
+                                <a href="{{ path('ecommerce_deleteCategory', {id:category.id}) }}" class="red-text" data-toggle="tooltip" data-placement="top" title="supprimer"><i class="fa fa-trash-o"></i></a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div><!-- End/.row3 -
+
+{% endblock contenair %}
+
+
+
+
+
+
+
+

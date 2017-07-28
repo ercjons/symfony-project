@@ -1,0 +1,73 @@
+ecommerce_product:
+    path:     /product
+    defaults: { _controller: EcommerceBundle:Product:product}
+
+ecommerce_addProduct:
+    path:     /addProduct
+    defaults: { _controller: EcommerceBundle:Product:addProduct}
+
+ecommerce_editProduct:
+    path:     /editProduct/{id}
+    defaults: { _controller: EcommerceBundle:Product:editProduct}
+    requirements:
+        id: \d+
+
+ecommerce_deleteProduct:
+    path:     /deleteProduct/{id}
+    defaults: { _controller: EcommerceBundle:Product:deleteProduct}
+    requirements:
+        id: \d+
+
+ecommerce_show:
+    path:     /product/show/{id}
+    defaults: { _controller: EcommerceBundle:Product:show }
+    requirements:
+        id: \d+
+
+ecommerce_filterProductByCategory:
+    path:     /product/category/{id}
+    defaults: { _controller: EcommerceBundle:Product:filterProductByCategory}
+    requirements:
+        id: \d+
+
+ecommerce_searchProduct:
+    path:     /search
+    defaults: {_controller: EcommerceBundle:Product:searchProduct}
+
+ecommerce_addTva:
+    path:     /addTva
+    defaults: { _controller: EcommerceBundle:Tva:addTva}
+
+#-------------------------------------------------------------
+
+ecommerce_addCategory:
+    path:     /addCategory
+    defaults: { _controller: EcommerceBundle:Category:addCategory}
+
+ecommerce_editCategory:
+    path:     /editCategory/{id}
+    defaults: { _controller: EcommerceBundle:Category:editCategory}
+
+ecommerce_deleteCategory:
+    path:     /deleteCategory/{id}
+    defaults: { _controller: EcommerceBundle:Category:deleteCategory}
+
+#-------------------------------------------------------------
+
+ecommerce_addBrand:
+    path:     /addBrand
+    defaults: { _controller: EcommerceBundle:Brand:addBrand}
+
+ecommerce_editBrand:
+    path:     /editBrand/{id}
+    defaults: { _controller: EcommerceBundle:Brand:editBrand}
+
+ecommerce_deleteBrand:
+    path:     /deleteBrand/{id}
+    defaults: { _controller: EcommerceBundle:Brand:deleteBrand}
+
+#-------------------------------------------------------------
+
+ecommerce_addFeature:
+    path:     /addFeature
+    defaults: { _controller: EcommerceBundle:Feature:addFeature}

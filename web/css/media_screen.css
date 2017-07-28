@@ -1,0 +1,284 @@
+/* Sur tous types d'écran, quand la largeur de la fenêtre est comprise entre 1024px et 1280px */
+/*responsive*/
+@media all and (min-width: 1024px) and (max-width: 1366px)
+{
+
+}
+
+@media all and (min-width: 768px) and (max-width: 1020px)
+{
+    .admin{
+        margin-top: 30%;
+    }
+
+    .login{
+        margin-top: 30%;
+    }
+
+    .checkmail{
+        margin-top: 30%;
+    }
+
+    .confirmed{
+        margin-top: 30%;
+    }
+
+    .register{
+        margin-top: 30%;
+    }
+
+    .resetting{
+        margin-top: 30%;
+    }
+
+    .show{
+        margin-top: 30%;
+    }
+
+    .cart{
+        margin-top: 30%;
+    }
+
+    .validate{
+        margin-top: 30%;
+    }
+
+    #sidebar_responsive{
+        margin: 0 auto;
+    }
+
+    #form{
+        width: 100%;
+    }
+
+    .left{
+        width: 100%;
+        text-align: center;
+    }
+
+    .sidebar li a{
+        text-align: center;
+    }
+}
+
+@media all and (min-width: 412px) and (max-width: 736px)
+{
+    .admin{
+        margin-top: 35%;
+    }
+
+    .login{
+        margin-top: 35%;
+    }
+
+    .checkmail{
+        margin-top: 35%;
+    }
+
+    .confirmed{
+        margin-top: 35%;
+    }
+
+    .register{
+        margin-top: 35%;
+    }
+
+    .resetting{
+        margin-top: 35%;
+    }
+
+    .show{
+        margin-top: 35%;
+    }
+
+    .cart{
+        margin-top: 35%;
+    }
+
+    .validate{
+        margin-top: 35%;
+    }
+
+    #sidebar_responsive{
+        margin: 0 auto;
+    }
+
+    #form{
+        width: 100%;
+    }
+
+    .left{
+        width: 100%;
+        text-align: center;
+    }
+
+    .sidebar li a{
+        text-align: center;
+    }
+
+    #footer .leftBlock p{
+        font-size: small;
+        text-align: center;
+    }
+
+    #footer .pull-left{
+        float: none !important;
+    }
+
+    #footer .pull-right{
+        float: none !important;
+    }
+
+    #footer .rightBlock p{
+        font-size: small;
+        text-align: center;
+    }
+
+
+}
+
+@media all and (min-width: 375px) and (max-width: 667px)
+{
+    .admin{
+        margin-top: 35%;
+    }
+
+    .login{
+        margin-top: 35%;
+    }
+
+    .checkmail{
+        margin-top: 35%;
+    }
+
+    .confirmed{
+        margin-top: 35%;
+    }
+
+    .register{
+        margin-top: 35%;
+    }
+
+    .resetting{
+        margin-top: 35%;
+    }
+
+    .show{
+        margin-top: 35%;
+    }
+
+    .cart{
+        margin-top: 35%;
+    }
+
+    .validate{
+        margin-top: 35%;
+    }
+
+    #sidebar_responsive{
+        margin: 0 auto;
+    }
+
+    #form{
+        width: 100%;
+    }
+
+    .left{
+        width: 100%;
+        text-align: center;
+    }
+
+    .sidebar li a{
+        text-align: center;
+    }
+
+    #footer .leftBlock p{
+        font-size: small;
+        text-align: center;
+    }
+    #footer .pull-left{
+        float: none !important;
+    }
+    #footer .pull-right{
+        float: none !important;
+    }
+
+    #footer .rightBlock p{
+        font-size: small;
+        text-align: center;
+    }
+}
+
+@media all and (min-width: 320px) and (max-width: 568px)
+{
+    .admin{
+        margin-top: 40%;
+    }
+
+    .login{
+        margin-top: 40%;
+    }
+
+    .checkmail{
+        margin-top: 40%;
+    }
+
+    .confirmed{
+        margin-top: 40%;
+    }
+
+    .register{
+        margin-top: 40%;
+    }
+
+    .resetting{
+        margin-top: 40%;
+    }
+
+    .show{
+        margin-top: 40%;
+    }
+
+    .cart{
+        margin-top: 40%;
+    }
+
+    .validate{
+        margin-top: 40%;
+    }
+
+    #sidebar_responsive{
+        margin: 0 auto;
+    }
+
+    #form{
+        width: 100%;
+    }
+
+    .left{
+        width: 100%;
+        text-align: center;
+    }
+
+    .sidebar li a{
+        text-align: center;
+    }
+
+    #footer .leftBlock p{
+        font-size: small;
+        text-align: center;
+    }
+    #footer .pull-left{
+        float: none !important;
+    }
+    #footer .pull-right{
+        float: none !important;
+    }
+
+    #footer .rightBlock p{
+        font-size: small;
+        text-align: center;
+    }
+
+
+}

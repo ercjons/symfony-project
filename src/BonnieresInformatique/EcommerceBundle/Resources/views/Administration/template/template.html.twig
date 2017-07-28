@@ -1,0 +1,12 @@
+{% extends 'global.html.twig' %}
+
+{#block body of file global.html.twig#}
+{% block body %}
+    {% include '@Ecommerce/Partials/header/navbar.html.twig' %}
+    <div class="container">
+        {% block contenair %}{% endblock contenair %}
+    </div>
+    {% include '@Ecommerce/Partials/footer/footer.html.twig' %}
+
+{% endblock body %}
+

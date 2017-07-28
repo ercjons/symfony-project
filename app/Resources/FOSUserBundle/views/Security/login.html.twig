@@ -1,0 +1,54 @@
+{% extends "@FOSUser/Template/layout/layout_login.html.twig" %}
+
+{% block fos_user_content %}
+    <div class="col-md-6 well">
+        {% if error %}
+            <div class="alert-danger">{{ error|trans({}, 'FOSUserBundle') }}</div>
+        {% endif %}
+        <form action="{{ path("fos_user_security_check") }}" method="post">
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+
+            <div class="text-center">
+                <img class="img-circle"
+                src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=80" alt="">
+                <hr>
+            </div>
+
+            <div class="input-group">
+                {#<label  for="username">{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}</label>#}
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <input  class="form-control" type="text" id="username" name="_username" value="{{ last_username }}"
+                required="required" placeholder="Entrer votre identifiant ou email" />
+            </div>
+            <br>
+
+            <div class="input-group">
+                {#<label for="password">{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}</label>#}
+                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                <input class="form-control" type="password" id="password" name="_password"
+                required="required" placeholder="Entrer votre mot de passe" />
+            </div>
+            <br>
+
+            <div class="form-group">
+                <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+                <label for="remember_me">{{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}</label>
+            </div>
+            <hr>
+            <input class="btn btn-success"  type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" />
+            <a href="{{ path('fos_user_resetting_request') }}" class="pull-right btn btn-primary">Mot de passe oublié ?</a>
+        </form>
+        <hr>
+        <div class="form-group">
+            <label>Pas de compte ?</label>
+            <a href="{{ path('fos_user_registration_register') }}">Créer un compte !</a>
+        </div>
+    </div>
+
+    <div class="col-md-6 text-center">
+        <p>
+            <span class="text-danger">La page de connexion :</span> vous permet d'accéder à votre espace client !
+        </p>
+    </div>
+
+{% endblock fos_user_content %}

@@ -1,0 +1,24 @@
+﻿Jmerise base de donnée crée les tables et les associations
+
+1/creer dossier symfony via commande cmd php symfony new nom_project 2.8
+2/configurer virtualhost => fichier hosts et httpd-vhosts
+3/copier fichier composer.phar et le  mettre à jour via commande composer self update
+4/ouvrir le project et supprimer le bundle AppBundle 
+5/ appkernel => supprimer  new AppBundle\AppBundle(),
+6/ routing.yml => supprimer la route du bundle
+7/ config.yml  => decommenter     #translator: { fallbacks: ['%locale%'] }
+ / parameters.yml => donné un nom à la bd 
+ / Installer les assets dns le repertoire web
+ / créer repertoire css , img et js 
+ / dns css => copier les fichiers boostrap, js => copier les fichier jquery et boostrap.js
+ / crééer bundle via commande => BonnieresInformatique/EcommerceBundle et BonnieresInformatique/UserBundle 
+ / Installer fosuserbundle => suivre la doc 
+ / creer repertoire form => copier fichier formhandler
+ / crer la page d'accueil 
+	
+
+
+ 
+ 
+ 
+ 

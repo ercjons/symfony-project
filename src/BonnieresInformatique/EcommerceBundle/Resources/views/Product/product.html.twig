@@ -1,0 +1,43 @@
+{% extends '@Ecommerce/content.html.twig' %}
+
+{% block contenair %}
+
+    <div class="row text-center">
+        <div class="col-md-3">
+            {% render(controller('EcommerceBundle:Category:sidebarLeft')) %}
+        </div>
+            <p><h4>Nos produits</h4></p>
+        <br>
+    {% if product | length != 0 %}
+        {% for product in product %}
+        <div class="col-md-3">
+            <div class="thumbnail">
+                <img src="{{ asset(product.getWebPath) }}" alt="" class="img-responsive">
+                <div class="caption">
+                    <h4>{{ product.brand.name }}</h4>
+                    <p>{{ product.type }}</p>
+                    <p>
+                       <a href="{{ path('ecommerce_addCart',{id:product.id}) }}" class="btn btn-primary btn-sm">Ajouter au panier</a>
+                       <a href="{{ path('ecommerce_show',{id:product.id}) }}" class="btn btn-default btn-sm">Détails</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+    {% else %}
+        <div class="col-md-7 col-md-offset-3 text-center">
+            <div class="alert alert-warning text-center">
+                <p>Aucun produit</p>
+            </div>
+        </div>
+    {% endif %}
+    </div><!-- End/.row -->
+
+    <div class="row text-center">
+        <div class="col-md-12">
+            {% include ('@Ecommerce/Partials/pagination/pagination.html.twig') %}
+        </div>
+    </div>
+
+{% endblock contenair %}

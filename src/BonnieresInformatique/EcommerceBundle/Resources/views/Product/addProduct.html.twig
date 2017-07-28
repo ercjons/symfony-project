@@ -1,0 +1,133 @@
+{% extends '@Ecommerce/Administration/template/template.html.twig' %}
+
+{% block contenair %}
+
+    <div class="row text-center admin">
+        <div class="col-md-1 pull-left">
+            <button type="button" class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-hand-right"></span> Ajouter un produit
+            </button>
+        </div>
+    </div><!-- End/.row -->
+    <hr>
+
+    {% include '@Ecommerce/Partials/flash/flash.html.twig' %}
+
+    <div class="row">
+        <div class="col-md-8 text-center" >
+            <div class="well" id="form">
+                <form action="{{ path('ecommerce_addProduct') }}" method="POST" {{ form_enctype(form) }}>
+                    {{ form_errors(form) }}
+                    <div class="form-group">
+                        {{ form_label(form.type, "Type du produit",{'label_attr':{'class':'col-sm3 control-label'}}) }}
+                        <br>
+                        {{ form_errors(form.type) }}
+                        <div class="col-md-12">
+                            {{ form_widget(form.type, {'attr':{'class': 'form-control'}}) }}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        {{ form_label(form.name, "Nom du produit",{'label_attr':{'class':'col-sm3 control-label'}}) }}
+                        <br>
+                        {{ form_errors(form.name) }}
+                        <div class="col-md-12">
+                            {{ form_widget(form.name, {'attr':{'class': 'form-control'}}) }}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        {{ form_label(form.description, "Description",{'label_attr':{'class':'col-sm3 control-label'}}) }}
+                        <br>
+                        {{ form_errors(form.description) }}
+                        <div class="col-md-12">
+                            {{ form_widget(form.description, {'attr':{'class': 'form-control'}}) }}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        {{ form_label(form.price, "Prix du produit",{'label_attr':{'class':'col-sm3 control-label'}}) }}
+                        <br>
+                        {{ form_errors(form.price) }}
+                        <div class="col-md-12">
+                            {{ form_widget(form.price, {'attr':{'class': 'form-control'}}) }}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        {{ form_label(form.guarantee, "Guarantie du produit",{'label_attr':{'class':'col-sm3 control-label'}}) }}
+                        <br>
+                        {{ form_errors(form.guarantee) }}
+                        <div class="col-md-12">
+                            {{ form_widget(form.guarantee, {'attr':{'class': 'form-control'}}) }}
+                        </div>
+                    </div>
+                    {{ form_rest(form) }}
+                    <hr>
+                    <input type="submit" class="btn btn-primary pull-right">
+                </form>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-md-offset-1" id="sidebar_responsive">
+            {% include ('@Ecommerce/Partials/sidebar/sidebar_admin.html.twig')%}
+        </div>
+    </div><!-- End/.row -->
+
+    <hr>
+    <div class="row">
+        <div class="col-md-6 text-center">
+            <table class="table table-hover table-responsive text-center">
+                <thead class="thead">
+                <tr>
+                    <th  class="text-center">Liste des produits</th>
+                    <th  class="text-center">Type de produit</th>
+                    <th  class="text-center">Mis en ligne</th>
+                    <th  class="text-center">Disponibilité</th>
+                    <th  class="text-center">Action</th>
+                    <th  class="text-center">On/off</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for product in product  %}
+                    <tr>
+                        <td>
+                            <p>{{ product.name }}</p>
+                        </td>
+                        <td>
+                            <p>{{ product.type }}</p>
+                        </td>
+                        <td>
+                            <p>{{ product.listingDate | date("m/d/Y") }}</p>
+                        </td>
+                        <td>
+                            {% if product.available == true %}
+                            <p class="alert-success">Mis en ligne</p>
+                            {% else %}
+                            <p class="alert-danger">Rupture</h4>
+                                {% endif %}
+                            <p></p>
+                        </td>
+                        <td>
+                            <a href="{{ path('ecommerce_editProduct', {id:product.id}) }}" class="red-text" data-toggle="tooltip" data-placement="top" title="Modifier"><i class="fa fa-wrench"></i></a>&nbsp;
+                            <a href="{{ path('ecommerce_deleteProduct', {id:product.id}) }} class="red-text" data-toggle="tooltip" data-placement="top" title="supprimer"><i class="fa fa-trash-o"></i></a>
+                        </td>
+                        <td>
+                            <input type="checkbox" checked data-toggle="toggle">
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div><!-- End/.row3 -
+
+{% endblock contenair %}
+
+
+
+
+
+
+
+

@@ -1,0 +1,20 @@
+routingAdmin:
+  resource: "@EcommerceBundle/Resources/config/routing/routingAdmin.yml"
+  prefix: /
+
+routingProduct:
+  resource: "@EcommerceBundle/Resources/config/routing/routingProduct.yml"
+  prefix: /
+
+routingUser:
+  resource: "@EcommerceBundle/Resources/config/routing/routingUser.yml"
+  prefix: /
+
+
+ecommerce_sidebarLeft:
+        path:     /
+        defaults: { _controller: EcommerceBundle:Default:sidebarLeft}
+
+ecommerce_services:
+        path:     /services
+        defaults: { _controller: EcommerceBundle:Default:service}

@@ -1,0 +1,176 @@
+{% extends '@Ecommerce/content.html.twig' %}
+
+{% block contenair %}
+
+    <div class="row">
+        <div class="col-md-3">
+            {% render(controller('EcommerceBundle:Category:sidebarLeft')) %}
+        </div>
+        <br>
+        <div class="col-md-9">
+            <table class="table table-hover table-responsive">
+                <thead class="thead">
+                <tr>
+                    <th>{{ product.type }}</th>
+                    <th></th>
+                    <th>Description du produit</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="col-sm-4">
+                        <img class="img-responsive" src="{{ asset(product.getWebPath) }}" alt="">
+                    </td>
+                    <td></td>
+                    <td>
+                        <p>{{ product.description }}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td> <h5>PrixHT: {{ product.price }} €</h5></td>
+                    <td class="col-sm-1 text-center">
+                        <form action="{{ path('ecommerce_addCart',{id:product.id}) }}" method="get">
+                            <select name="" class="form-control" >
+                                {% for i in 1..5 %}
+                                <option value="{{ i }}">{{ i }}</option>
+                                {% endfor %}
+                            </select><br>
+                            {% if product.available == true %}
+                            <button href="{{ path('ecommerce_addCart',{id:product.id}) }}" class="btn btn-primary">Ajouter au panier</button>
+                            {% else %}
+                            <button href="{{ path('ecommerce_addCart',{id:product.id}) }}" class="hidden">Ajouter au panier</button>
+                            {% endif %}
+
+                        </form>
+                    </td>
+                    <td></td>
+                    <td>
+                        {% if product.available == true %}
+                        <p class="alert-success">Disponible</p>
+                        {% else %}
+                        <p class="alert-danger">Rupture</p>
+                        {% endif %}
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div><!-- /.row -->
+
+    <hr>
+    <div class="row">
+        <div class="col-md-9 col-md-offset-3">
+            <table class="table table-hover table-responsive">
+                <thead class="thead">
+                <tr>
+                    <th><h4>CARACTERISTIQUES</h4></th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody class=" slideup">
+
+                {% for feature in feature %}
+                    <tr>
+                        <th>Système</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Système d'exploitation</td>
+                        <td class="text-right">{{ feature.os }}</td>
+                    </tr>
+                    <tr>
+                        <th>Processeur</th>
+                        <td></td>
+                    </tr>
+                        <tr>
+                            <td>Modèle processeur</td>
+                            <td class="text-right">{{ feature.cpu }}</td>
+                        </tr>
+                        <tr>
+                            <td>Fréquence</td>
+                            <td class="text-right">	{{ feature.cpuFrequency }} GHz</td>
+                        </tr>
+                    <tr>
+                        <th>Carte Graphique</th>
+                        <td></td>
+                    </tr>
+                        <tr>
+                            <td>Modèle</td>
+                            <td class="text-right">{{ feature.graphicChipset }}</td>
+                        </tr>
+                        <tr>
+                            <td>Capacité</td>
+                            <td class="text-right">{{ feature.hdCapacity }} GO</td>
+                        </tr>
+                    <tr>
+                        <th>Ecran</th>
+                        <td></td>
+                    </tr>
+                        <tr>
+                            <td>Taille</td>
+                            <td class="text-right">	{{ feature.screenSize }} pouce</td>
+                        </tr>
+                        <tr>
+                            <td>Type</td>
+                            <td class="text-right">{{ feature.screenType }}</td>
+                        </tr>
+                    <tr>
+                        <th>Mémoire Et Stockage</th>
+                        <td></td>
+                    </tr>
+                        <tr>
+                            <td>Mémoire vive RAM</td>
+                            <td class="text-right">{{ feature.ramCapacity }} GO</td>
+                        </tr>
+                        <tr>
+                            <td>Type RAM</td>
+                            <td class="text-right">{{ feature.ramType}}</td>
+                        </tr>
+                        <tr>
+                            <td>Capacité disque dur</td>
+                            <td class="text-right">{{ feature.hdCapacity }} GO</td>
+                        </tr>
+                        <tr>
+                            <td>Type disque dur</td>
+                            <td class="text-right">{{ feature.hdType }}</td>
+                        </tr>
+                    <tr>
+                        <th>Connectique</th>
+                        <td></td>
+                    </tr>
+                        <tr>
+                            <td>Ports USB</td>
+                            <td class="text-right">{{ feature.usbPort }} port usb 3.0</td>
+                        </tr>
+                        <tr>
+                            <td>Sortie</td>
+                            <td class="text-right">{{ feature.displayPort }}</td>
+                        </tr>
+                        <tr>
+                            <td>Type disque dur</td>
+                            <td class="text-right">   </td>
+                        </tr>
+                    <tr>
+                        <th>Réseaux</th>
+                        <td></td>
+                    </tr>
+                        <tr>
+                            <td>Sans fil</td>
+                            <td class="text-right">{{ feature.network }}</td>
+                        </tr>
+                    <tr>
+                        <th>Autres</th>
+                        <td></td>
+                    </tr>
+                        <tr>
+                            <td>Poids</td>
+                            <td class="text-right">  </td>
+                        </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div><!-- End/.row3 -->
+
+
+{% endblock contenair %}

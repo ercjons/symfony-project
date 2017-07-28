@@ -1,0 +1,17 @@
+<div class="col-md-6 well">
+    <form action="{{ path('fos_user_resetting_send_email') }}" method="POST" class="fos_user_resetting_request">
+        {% if invalid_username is defined %}
+            <p class="alert-danger">{{ 'resetting.request.invalid_username'|trans({'%username%': invalid_username}, 'FOSUserBundle') }}</p>
+        {% endif %}
+        <div class="input-group">
+            {#<label for="username">{{ 'resetting.request.username'|trans({}, 'FOSUserBundle') }}</label>#}
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input type="text" id="username" name="username" required="required" class="form-control" placeholder="Entrer votre identifiant ou email" />
+        </div>
+        <hr>
+
+        <div class="form-group">
+            <input class=" btn btn-primary" type="submit" value="{{ 'resetting.request.submit'|trans({}, 'FOSUserBundle') }}" />
+        </div>
+    </form>
+</div>

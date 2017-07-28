@@ -1,0 +1,24 @@
+    {#<!-- Title -->#}
+    <div class="row text-center">
+        <div class="col-md-3">
+            {% include ('@Ecommerce/Partials/sidebar/sidebar_left.html.twig')%}
+        </div>
+        <hr>
+        <h4 class="text-center">Nos Promotions</h4>
+        <hr>
+        {% for i in 0..2 %}
+        <div class="col-md-3">
+            <div class="thumbnail">
+                <img src="{{ asset('img/asus_portable.png') }}" alt="">
+                <div class="caption">
+                    <h4>ASUS</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <p>
+                        <a href="#" class="btn btn-primary btn-sm">Acheter</a> <a href="{{ path('ecommerce_show') }}" class="btn btn-default btn-sm">Détails</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <!-- /.row -->

@@ -1,0 +1,327 @@
+{% extends '@Ecommerce/Administration/template/template.html.twig' %}
+
+{% block contenair %}
+
+    <div class="row text-center admin">
+        <div class="col-md-1 pull-left">
+            <button type="button" class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-hand-right"></span> Ajouter une caratéristique
+            </button>
+        </div>
+    </div><!-- End/.row -->
+    <hr>
+
+    {% include '@Ecommerce/Partials/flash/flash.html.twig' %}
+
+    <div class="row">
+        <div class="col-md-8 text-center" >
+            <div class="well" id="form">
+                <form action="{{ path('ecommerce_addFeature') }}" method="POST" {{ form_enctype(form) }}>
+                    {{ form_errors(form) }}
+                    <div class="form-group">
+                        {{ form_label(form.os, "OS",{'label_attr':{'class':'col-sm3 control-label'}}) }}
+                        <br>
+                        {{ form_errors(form.os) }}
+                        <div class="col-md-12">
+                            {{ form_widget(form.os, {'attr':{'class': 'form-control'}}) }}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        {{ form_label(form.cpu, "Cpu",{'label_attr':{'class':'col-sm3 control-label'}}) }}
+                        <br>
+                        {{ form_errors(form.cpu) }}
+                        <div class="col-md-12">
+                            {{ form_widget(form.cpu, {'attr':{'class': 'form-control'}}) }}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        {{ form_label(form.cpuFrequency, "Fréquence cpu",{'label_attr':{'class':'col-sm3 control-label'}}) }}
+                        <br>
+                        {{ form_errors(form.cpuFrequency) }}
+                        <div class="col-md-12">
+                            {{ form_widget(form.cpuFrequency, {'attr':{'class': 'form-control'}}) }}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        {{ form_label(form.graphicChipset, "Carte graphique",{'label_attr':{'class':'col-sm3 control-label'}}) }}
+                        <br>
+                        {{ form_errors(form.graphicChipset) }}
+                        <div class="col-md-12">
+                            {{ form_widget(form.graphicChipset, {'attr':{'class': 'form-control'}}) }}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        {{ form_label(form.graphicCapacity, "Capacité carte graphique",{'label_attr':{'class':'col-sm3 control-label'}}) }}
+                        <br>
+                        {{ form_errors(form.graphicCapacity) }}
+                        <div class="col-md-12">
+                            {{ form_widget(form.graphicCapacity, {'attr':{'class': 'form-control'}}) }}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        {{ form_label(form.screenSize, "Taille écran",{'label_attr':{'class':'col-sm3 control-label'}}) }}
+                        <br>
+                        {{ form_errors(form.screenSize) }}
+                        <div class="col-md-12">
+                            {{ form_widget(form.screenSize, {'attr':{'class': 'form-control'}}) }}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        {{ form_label(form.screenType, "Type écran",{'label_attr':{'class':'col-sm3 control-label'}}) }}
+                        <br>
+                        {{ form_errors(form.screenType) }}
+                        <div class="col-md-12">
+                            {{ form_widget(form.screenType, {'attr':{'class': 'form-control'}}) }}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        {{ form_label(form.ramCapacity, "Mémoire RAM",{'label_attr':{'class':'col-sm3 control-label'}}) }}
+                        <br>
+                        {{ form_errors(form.ramCapacity) }}
+                        <div class="col-md-12">
+                            {{ form_widget(form.ramCapacity, {'attr':{'class': 'form-control'}}) }}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        {{ form_label(form.ramType, "Type de RAM",{'label_attr':{'class':'col-sm3 control-label'}}) }}
+                        <br>
+                        {{ form_errors(form.ramType) }}
+                        <div class="col-md-12">
+                            {{ form_widget(form.ramType, {'attr':{'class': 'form-control'}}) }}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        {{ form_label(form.ramExpandable, "RAM extensible",{'label_attr':{'class':'col-sm3 control-label'}}) }}
+                        <br>
+                        {{ form_errors(form.ramExpandable) }}
+                        <div class="col-md-12">
+                            {{ form_widget(form.ramExpandable, {'attr':{'class': 'form-control'}}) }}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        {{ form_label(form.ramSlot, "Slot RAM",{'label_attr':{'class':'col-sm3 control-label'}}) }}
+                        <br>
+                        {{ form_errors(form.ramSlot) }}
+                        <div class="col-md-12">
+                            {{ form_widget(form.ramSlot, {'attr':{'class': 'form-control'}}) }}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        {{ form_label(form.hdCapacity, "Capacité Disque dure",{'label_attr':{'class':'col-sm3 control-label'}}) }}
+                        <br>
+                        {{ form_errors(form.hdCapacity) }}
+                        <div class="col-md-12">
+                            {{ form_widget(form.hdCapacity, {'attr':{'class': 'form-control'}}) }}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        {{ form_label(form.hdType, "Type disque dure",{'label_attr':{'class':'col-sm3 control-label'}}) }}
+                        <br>
+                        {{ form_errors(form.hdType) }}
+                        <div class="col-md-12">
+                            {{ form_widget(form.hdType, {'attr':{'class': 'form-control'}}) }}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        {{ form_label(form.hardwareConnect, "Connectique disue dure",{'label_attr':{'class':'col-sm3 control-label'}}) }}
+                        <br>
+                        {{ form_errors(form.hardwareConnect) }}
+                        <div class="col-md-12">
+                            {{ form_widget(form.hardwareConnect, {'attr':{'class': 'form-control'}}) }}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        {{ form_label(form.usbPort, "Port USB",{'label_attr':{'class':'col-sm3 control-label'}}) }}
+                        <br>
+                        {{ form_errors(form.usbPort) }}
+                        <div class="col-md-12">
+                            {{ form_widget(form.usbPort, {'attr':{'class': 'form-control'}}) }}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        {{ form_label(form.displayPort, "Port d'affichage",{'label_attr':{'class':'col-sm3 control-label'}}) }}
+                        <br>
+                        {{ form_errors(form.displayPort) }}
+                        <div class="col-md-12">
+                            {{ form_widget(form.displayPort, {'attr':{'class': 'form-control'}}) }}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        {{ form_label(form.network, "Réseaux",{'label_attr':{'class':'col-sm3 control-label'}}) }}
+                        <br>
+                        {{ form_errors(form.network) }}
+                        <div class="col-md-12">
+                            {{ form_widget(form.network, {'attr':{'class': 'form-control'}}) }}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        {{ form_label(form.weight, "Poids",{'label_attr':{'class':'col-sm3 control-label'}}) }}
+                        <br>
+                        {{ form_errors(form.weight) }}
+                        <div class="col-md-12">
+                            {{ form_widget(form.weight, {'attr':{'class': 'form-control'}}) }}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        {{ form_label(form.rom, "ROM",{'label_attr':{'class':'col-sm3 control-label'}}) }}
+                        <br>
+                        {{ form_errors(form.rom) }}
+                        <div class="col-md-12">
+                            {{ form_widget(form.rom, {'attr':{'class': 'form-control'}}) }}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        {{ form_label(form.extendCard, "Extension Carte",{'label_attr':{'class':'col-sm3 control-label'}}) }}
+                        <br>
+                        {{ form_errors(form.extendCard) }}
+                        <div class="col-md-12">
+                            {{ form_widget(form.extendCard, {'attr':{'class': 'form-control'}}) }}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        {{ form_label(form.frontCam, "Camera Frontale",{'label_attr':{'class':'col-sm3 control-label'}}) }}
+                        <br>
+                        {{ form_errors(form.frontCam) }}
+                        <div class="col-md-12">
+                            {{ form_widget(form.frontCam, {'attr':{'class': 'form-control'}}) }}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        {{ form_label(form.backCam, "Camera arrière",{'label_attr':{'class':'col-sm3 control-label'}}) }}
+                        <br>
+                        {{ form_errors(form.backCam) }}
+                        <div class="col-md-12">
+                            {{ form_widget(form.backCam, {'attr':{'class': 'form-control'}}) }}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        {{ form_label(form.compatibility, "Compatibilité",{'label_attr':{'class':'col-sm3 control-label'}}) }}
+                        <br>
+                        {{ form_errors(form.compatibility) }}
+                        <div class="col-md-12">
+                            {{ form_widget(form.compatibility, {'attr':{'class': 'form-control'}}) }}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        {{ form_label(form.hardSoft, "Hard soft",{'label_attr':{'class':'col-sm3 control-label'}}) }}
+                        <br>
+                        {{ form_errors(form.hardSoft) }}
+                        <div class="col-md-12">
+                            {{ form_widget(form.hardSoft, {'attr':{'class': 'form-control'}}) }}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        {{ form_label(form.pattern, "Pattern",{'label_attr':{'class':'col-sm3 control-label'}}) }}
+                        <br>
+                        {{ form_errors(form.pattern) }}
+                        <div class="col-md-12">
+                            {{ form_widget(form.pattern, {'attr':{'class': 'form-control'}}) }}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        {{ form_label(form.material, "Matériel",{'label_attr':{'class':'col-sm3 control-label'}}) }}
+                        <br>
+                        {{ form_errors(form.material) }}
+                        <div class="col-md-12">
+                            {{ form_widget(form.material, {'attr':{'class': 'form-control'}}) }}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        {{ form_label(form.cableLength, "Longeur Cable",{'label_attr':{'class':'col-sm3 control-label'}}) }}
+                        <br>
+                        {{ form_errors(form.cableLength) }}
+                        <div class="col-md-12">
+                            {{ form_widget(form.cableLength, {'attr':{'class': 'form-control'}}) }}
+                        </div>
+                    </div>
+
+                    {{ form_rest(form) }}
+                    <hr>
+                    <input type="submit" class="btn btn-primary pull-right">
+                </form>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-md-offset-1" id="sidebar_responsive">
+            {% include ('@Ecommerce/Partials/sidebar/sidebar_admin.html.twig')%}
+        </div>
+    </div><!-- End/.row -->
+
+    <hr>
+    <div class="row">
+        <div class="col-md-6 text-center">
+            <table class="table table-hover table-responsive text-center">
+                <thead class="thead">
+                <tr>
+                    <th  class="text-center">Liste des produits</th>
+                    <th  class="text-center">Type de produit</th>
+                    <th  class="text-center">Mis en ligne</th>
+                    <th  class="text-center">Disponibilité</th>
+                    <th  class="text-center">Action</th>
+                    <th  class="text-center">On/off</th>
+                </tr>
+                </thead>
+                <tbody>
+                {#{% for product in product  %}#}
+                    {#<tr>#}
+                        {#<td>#}
+                            {#<p>{{ product.name }}</p>#}
+                        {#</td>#}
+                        {#<td>#}
+                            {#<p>{{ product.type }}</p>#}
+                        {#</td>#}
+                        {#<td>#}
+                            {#<p>{{ product.listingDate | date("m/d/Y") }}</p>#}
+                        {#</td>#}
+                        {#<td>#}
+                            {#<p>{{ product.available }}</p>#}
+                        {#</td>#}
+                        {#<td>#}
+                            {#<a href="{{ path('ecommerce_editProduct', {id:product.id}) }}" class="red-text" data-toggle="tooltip" data-placement="top" title="Modifier"><i class="fa fa-wrench"></i></a>&nbsp;#}
+                            {#<a class="red-text" data-toggle="tooltip" data-placement="top" title="supprimer"><i class="fa fa-trash-o"></i></a>#}
+                        {#</td>#}
+                        {#<td>#}
+                            {#<input type="checkbox" checked data-toggle="toggle">#}
+                        {#</td>#}
+                    {#</tr>#}
+                {#{% endfor %}#}
+                </tbody>
+            </table>
+        </div>
+    </div><!-- End/.row3 -
+
+{% endblock contenair %}
+
+
+
+
+
+
+
+

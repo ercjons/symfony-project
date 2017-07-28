@@ -1,0 +1,85 @@
+{% extends '@Ecommerce/Administration/template/template.html.twig' %}
+
+{% block contenair %}
+
+    <div class="row text-center cart">
+        <div class="col-md-1 pull-left">
+            <button type="button" class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-shopping-cart"></span> Votre Panier
+            </button>
+        </div>
+        <div class="col-md-10">
+
+        </div>
+    </div><!-- End/.row -->
+    <hr>
+
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-hover table-responsive text-center">
+                <thead class="thead">
+                <tr>
+                    <th  class="text-center">Produits</th>
+                    <th  class="text-center">Réference</th>
+                    <th  class="text-center">Quantité</th>
+                    <th  class="text-center">Total HT</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="thumbnail col-md-1">
+                        <img src="{{ asset('img/lenovo_portable.png') }}" alt=""></td>
+                    <td>A12345</td>
+                    <td class="col-md-1">
+                        <select name="" class="form-control" >
+                            <option value="">1</option>
+                            <option value="">2</option>
+                            <option value="">3</option>
+                        </select>&nbsp;
+                        <a class="red-text" data-toggle="tooltip" data-placement="top" title="rafraichir"><i class="fa fa-refresh fa-spin"></i></a>
+                        <a class="red-text" data-toggle="tooltip" data-placement="top" title="supprimer"><i class="fa fa-times"></i></a>
+                    </td>
+                    <td>260,99</td>
+                </tr>
+                </tbody>
+            </table>
+            <hr>
+            <dl class="dl-horizontal pull-right text-center total">
+                <dt>Total HT :</dt>
+                <dd>260,99€</dd>
+
+                <dt>TVA :</dt>
+                <dd>20€</dd>
+
+                <dt>Total TTC:</dt>
+                <dd>280,99€</dd>
+            </dl>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-2 pull-left">
+            <button class="page-item disabled btn-sm btn-primary">
+                <span class="page-link"><<  Continuer mes achats</span>
+            </button>
+        </div>
+        <div class="col-md-offset-8">
+
+        </div>
+        <div class="col-md-2 pull-right">
+            <button class="page-item disabled btn-sm btn-primary">
+                <span class="page-link">Valider mon panier  >></span>
+            </button>
+        </div>
+    </div>
+
+{% endblock contenair %}
+
+
+
+
+
+
+
+

@@ -1,0 +1,28 @@
+{% extends '@FOSUser/Template/template/template.html.twig' %}
+
+    {% block contenair %}
+
+        <div class="row text-center resetting">
+            <div class="col-md-1 pull-left">
+                <button type="button" class="btn btn-default btn-sm">
+                    <span class="glyphicon glyphicon-check"></span>    Changer votre de mot de passe
+                </button>
+            </div>
+        </div><!-- End/.row -->
+        <hr>
+        <div class="row">
+            <div class="col-md-12">
+                {% for type, messages in app.session.flashBag.all %}
+                    {% for message in messages %}
+                        <div class="{{ type }}">
+                            {{ message|trans({}, 'FOSUserBundle') }}
+                        </div>
+                    {% endfor %}
+                {% endfor %}
+            </div>
+        </div><!-- End/.row -->
+
+        {% block fos_user_content %}
+        {% endblock fos_user_content %}
+
+    {% endblock contenair  %}

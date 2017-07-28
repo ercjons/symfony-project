@@ -1,0 +1,31 @@
+ecommerce_homepage:
+    path:     /
+    defaults: { _controller: EcommerceBundle:Default:index }
+
+ecommerce_contact:
+    path:     /contact
+    defaults: { _controller: EcommerceBundle:Contact:contact }
+
+ecommerce_cart:
+    path:     /cart
+    defaults: { _controller: EcommerceBundle:Cart:cart }
+
+ecommerce_addCart:
+    path:     /addCart/{id}
+    defaults: { _controller: EcommerceBundle:Cart:addCart }
+
+ecommerce_validate:
+    path:     /cart/validate
+    defaults: { _controller: EcommerceBundle:Cart:validate }
+
+ecommerce_admin:
+    path:     /admin
+    defaults: { _controller: EcommerceBundle:Admin:index }
+
+ecommerce_addUserAddress:
+    path:     /addUserAddress
+    defaults: { _controller: EcommerceBundle:UserAddress:addUserAddress}
+
+ecommerce_addUserOrder:
+    path:     /addUserOrder
+    defaults: { _controller: EcommerceBundle:UserOrder:addUserOrder}

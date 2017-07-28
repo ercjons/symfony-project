@@ -1,0 +1,27 @@
+<div class="col-md-8 well">
+    <form action="{{ path('fos_user_resetting_reset', {'token': token}) }}" {{ form_enctype(form) }} method="POST" class="fos_user_resetting_reset">
+        {{ form_widget(form) }}
+        <div>
+            <input type="submit" value="{{ 'resetting.reset.submit'|trans({}, 'FOSUserBundle') }}" />
+        </div>
+    </form>
+</div>
+
+{#<div class="col-md-8 well">#}
+    {#<form action="{{ path('fos_user_resetting_reset', {'token': token}) }}" {{ form_enctype(form) }} method="POST" class="fos_user_resetting_reset">#}
+        {#<div id="fos_user_resetting_form">#}
+            {#<div>#}
+                {#<label for="fos_user_resetting_form_new_first" class="required">Nouveau mot de passe</label>#}
+                {#<input type="password" id="fos_user_resetting_form_new_first" name="fos_user_resetting_form[new][first]" required="required">#}
+            {#</div>#}
+
+            {#<div>#}
+                {#<label for="fos_user_resetting_form_new_second" class="required">Vérification</label>#}
+                {#<input type="password" id="fos_user_resetting_form_new_second" name="fos_user_resetting_form[new][second]" required="required">#}
+            {#</div>#}
+            {#<div>#}
+                {#<input type="submit" value="Modifier le mot de passe">#}
+            {#</div>#}
+        {#</div>    #}
+    {#</form>#}
+{#</div>#}

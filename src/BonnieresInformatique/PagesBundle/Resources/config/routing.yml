@@ -1,0 +1,11 @@
+#pages_homepage:
+#    path:     /
+#    defaults: { _controller: PagesBundle:Default:index }
+#
+pages_addPage:
+    path:     /addPage
+    defaults: { _controller: PagesBundle:Pages:addPage }
+
+pages_showPage:
+    path:     /showPage/{id}
+    defaults: { _controller: PagesBundle:Pages:page }

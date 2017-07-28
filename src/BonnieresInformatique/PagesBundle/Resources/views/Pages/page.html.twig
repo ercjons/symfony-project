@@ -1,0 +1,32 @@
+{% extends '@Ecommerce/Administration/template/template.html.twig' %}
+
+{% block contenair %}
+
+    <div class="row text-center cart">
+        <div class="col-md-1 pull-left">
+            <button type="button" class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-shopping-cart"></span> {{ page.title }}
+            </button>
+        </div>
+        <div class="col-md-10">
+
+        </div>
+    </div><!-- End/.row -->
+    <hr>
+
+    <div class="row">
+       <div class="col-md-12">
+           {#le filtre raw permet à twig d'interpréper le html #}
+           {{ page.content | raw}}
+       </div>
+    </div>
+
+{% endblock contenair %}
+
+
+
+
+
+
+
+
