@@ -59,6 +59,7 @@
     .sidebar li a{
         text-align: center;
     }
+
 }
 
 @media all and (min-width: 412px) and (max-width: 736px)

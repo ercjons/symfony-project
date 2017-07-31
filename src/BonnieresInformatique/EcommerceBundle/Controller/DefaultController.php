@@ -23,4 +23,10 @@ class DefaultController extends Controller
         return $this->render('EcommerceBundle:Services:services.html.twig');
     }
 
+    public function error404Action()
+    {
+
+        return $this->render('EcommerceBundle:Partials/error:error404.html.twig');
+    }
+
 }

@@ -1,1 +1,73 @@
-Hello si!
+{% extends '@Ecommerce/Administration/template/template.html.twig' %}
+
+{% block contenair %}
+
+    {% if is_granted('ROLE_SUPER_ADMIN') %}
+        <div class="row text-center admin">
+            <div class="col-md-1 pull-left">
+                <button type="button" class="btn btn-default btn-sm">
+                    <span class="glyphicon glyphicon-hand-right"></span> Page adminisration
+                </button>
+            </div>
+        </div><!-- End/.row -->
+        <hr>
+
+        <div class="row">
+            <div class="col-md-9 text-center">
+                <!-- Left-aligned -->
+                <div class="media">
+                    <div class="media-left media-middle">
+                        <img src="{{ asset('img/user-settings-icon.png') }}" class="media-object" style="width:150px">
+                    </div>
+                    <div class="media-body media-middle">
+                        <h4 class="media-heading">Mr {{  app.user.username }},</h4>
+                        <p>Bienvenue sur votre espace admin ! Le changement c'est maintenant !</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3" id="sidebar_responsive">
+                {% include ('@Ecommerce/Partials/sidebar/sidebar_admin.html.twig')%}
+            </div>
+        </div><!-- End/.row -->
+
+    {% elseif is_granted('ROLE_USER') %}
+        <div class="row text-center admin">
+            <div class="col-md-1 pull-left">
+                <button type="button" class="btn btn-default btn-sm">
+                    <span class="glyphicon glyphicon-hand-right"></span> Page Client
+                </button>
+            </div>
+        </div><!-- End/.row -->
+        <hr>
+
+        <div class="row">
+            <div class="col-md-9 text-center">
+                <!-- Left-aligned -->
+                <div class="media">
+                    <div class="media-left media-middle">
+                        <img src="{{ asset('img/user-settings-icon.png') }}" class="media-object" style="width:150px">
+                    </div>
+                    <div class="media-body media-middle">
+                        <h4 class="media-heading">Mr {{  app.user.username }},</h4>
+                        <p>Bienvenue sur votre espace client !</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                {% include ('@Ecommerce/Partials/sidebar/sidebar_user.html.twig')%}
+            </div>
+        </div><!-- End/.row -->
+
+    {% endif %}
+
+{% endblock contenair %}
+
+
+
+
+
+
+
+

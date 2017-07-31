@@ -117,7 +117,7 @@ class ProductController extends Controller
     public function searchAction()
     {
         // ici on crée le formulaire de recherche
-        $form = $this->createForm(new SearchType());
+        $form = $this->createForm(SearchType::class);
 
         //on retourne la vue du formulaire qui contient le champs recherche
         return $this->render('EcommerceBundle:Partials/search:search.html.twig', ['form'=> $form->createView()]);
@@ -127,11 +127,11 @@ class ProductController extends Controller
     {
         //ici on crée une méthode qui permet de récupérer les données
         // saisies dans le champs recherche
-        $form = $this->createForm(new SearchType());
-        if($this->get('request')->getMethod()=='POST'){
-            $form->handleRequest($this->get('request'));
+        $form = $this->createForm(SearchType::class);
+        if($request->getMethod()=='POST'){
+            $form->handleRequest($request);
             $em = $this->getDoctrine()->getManager();
-            $productList =$em->getRepository('EcommerceBundle:Product')->search($form['search']->getData());
+            $productList = $em->getRepository('EcommerceBundle:Product')->search($form['search']->getData());
 
             $paginator = $this->get('knp_paginator');
             $product =  $paginator->paginate(
@@ -143,5 +143,6 @@ class ProductController extends Controller
         }
         return $this->render('EcommerceBundle:Product:product.html.twig', ['product'=> $product]);
     }
+
 
 }

@@ -47,10 +47,14 @@ ecommerce_addCategory:
 ecommerce_editCategory:
     path:     /editCategory/{id}
     defaults: { _controller: EcommerceBundle:Category:editCategory}
+    requirements:
+            id: \d+
 
 ecommerce_deleteCategory:
     path:     /deleteCategory/{id}
     defaults: { _controller: EcommerceBundle:Category:deleteCategory}
+    requirements:
+            id: \d+
 
 #-------------------------------------------------------------
 
@@ -61,13 +65,19 @@ ecommerce_addBrand:
 ecommerce_editBrand:
     path:     /editBrand/{id}
     defaults: { _controller: EcommerceBundle:Brand:editBrand}
+    requirements:
+            id: \d+
 
 ecommerce_deleteBrand:
     path:     /deleteBrand/{id}
     defaults: { _controller: EcommerceBundle:Brand:deleteBrand}
+    requirements:
+            id: \d+
 
 #-------------------------------------------------------------
 
 ecommerce_addFeature:
     path:     /addFeature
     defaults: { _controller: EcommerceBundle:Feature:addFeature}
+
+

@@ -24,6 +24,9 @@ security:
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin, role: ROLE_USER }
+        - { path: ^/addCart, role: ROLE_USER }
+        - { path: ^/deleteCart, role: ROLE_USER }
+        - { path: ^/cart, role: ROLE_USER }
         - { path: ^/addProduct, role: ROLE_ADMIN }
         - { path: ^/editProduct, role: ROLE_ADMIN }
         - { path: ^/addCategory, role: ROLE_ADMIN }

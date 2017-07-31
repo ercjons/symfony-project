@@ -19,7 +19,7 @@
                 <tbody>
                 <tr>
                     <td class="col-sm-4">
-                        <img class="img-responsive" src="{{ asset(product.getWebPath) }}" alt="">
+                        <img src="{{ asset(product.getWebPath) }}"/>
                     </td>
                     <td></td>
                     <td>
@@ -30,7 +30,7 @@
                     <td> <h5>PrixHT: {{ product.price }} €</h5></td>
                     <td class="col-sm-1 text-center">
                         <form action="{{ path('ecommerce_addCart',{id:product.id}) }}" method="get">
-                            <select name="" class="form-control" >
+                            <select name="quantity" class="form-control" >
                                 {% for i in 1..5 %}
                                 <option value="{{ i }}">{{ i }}</option>
                                 {% endfor %}
@@ -40,7 +40,6 @@
                             {% else %}
                             <button href="{{ path('ecommerce_addCart',{id:product.id}) }}" class="hidden">Ajouter au panier</button>
                             {% endif %}
-
                         </form>
                     </td>
                     <td></td>
@@ -171,6 +170,5 @@
             </table>
         </div>
     </div><!-- End/.row3 -->
-
 
 {% endblock contenair %}

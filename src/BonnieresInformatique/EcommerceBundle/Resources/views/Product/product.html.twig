@@ -6,20 +6,20 @@
         <div class="col-md-3">
             {% render(controller('EcommerceBundle:Category:sidebarLeft')) %}
         </div>
-            <p><h4>Nos produits</h4></p>
-        <br>
+            {#<p><h4>Nos produits</h4></p>#}
+
     {% if product | length != 0 %}
         {% for product in product %}
         <div class="col-md-3">
             <div class="thumbnail">
                 <img src="{{ asset(product.getWebPath) }}" alt="" class="img-responsive">
-                <div class="caption">
-                    <h4>{{ product.brand.name }}</h4>
-                    <p>{{ product.type }}</p>
+                <div class="caption product_info">
+                    <h4>{{ product.brand.name }} {{ product.type }}</h4>
                     <p>
+                       <span class="price">{{ product.price}} €</span>
+                    </p>
                        <a href="{{ path('ecommerce_addCart',{id:product.id}) }}" class="btn btn-primary btn-sm">Ajouter au panier</a>
                        <a href="{{ path('ecommerce_show',{id:product.id}) }}" class="btn btn-default btn-sm">Détails</a>
-                    </p>
                 </div>
             </div>
         </div>

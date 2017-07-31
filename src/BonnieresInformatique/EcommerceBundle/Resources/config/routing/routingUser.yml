@@ -1,5 +1,5 @@
 ecommerce_homepage:
-    path:     /
+    path:     /home
     defaults: { _controller: EcommerceBundle:Default:index }
 
 ecommerce_contact:
@@ -13,6 +13,14 @@ ecommerce_cart:
 ecommerce_addCart:
     path:     /addCart/{id}
     defaults: { _controller: EcommerceBundle:Cart:addCart }
+    requirements:
+            id: \d+
+
+ecommerce_delteCart:
+    path:     /deleteCart/{id}
+    defaults: { _controller: EcommerceBundle:Cart:deleteCart}
+    requirements:
+            id: \d+
 
 ecommerce_validate:
     path:     /cart/validate

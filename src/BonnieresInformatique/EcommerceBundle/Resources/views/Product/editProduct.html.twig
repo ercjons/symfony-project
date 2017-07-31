@@ -101,13 +101,33 @@
                         </td>
                         <td>
                             <p>{{ product.available }}</p>
+
                         </td>
                         <td>
                             <a href="{{ path('ecommerce_editProduct', {id:product.id}) }}" class="red-text" data-toggle="tooltip" data-placement="top" title="Modifier"><i class="fa fa-wrench"></i></a>&nbsp;
                             <a class="red-text" data-toggle="tooltip" data-placement="top" title="supprimer"><i class="fa fa-trash-o"></i></a>
                         </td>
                         <td>
-                            <input type="checkbox" checked data-toggle="toggle">
+                            {#<input type="checkbox" checked data-toggle="toggle">#}
+
+                            <input id="toggle-trigger" type="checkbox" checked data-toggle="toggle">
+                            <button class="btn btn-primary" onclick="getValue()">Value</button>
+                            <script>
+                                //If you want to change it dynamically
+                                function toggleOn() {
+                                    $('#toggle-trigger').bootstrapToggle('on');
+                                }
+                                function toggleOff() {
+                                    $('#toggle-trigger').bootstrapToggle('off');
+                                    {{ product.available == false }}
+                                }
+                                //if you want get value
+                                function getValue()
+                                {
+                                    var value=$('#toggle-trigger').bootstrapToggle().prop('checked');
+                                    console.log(value);
+                                }
+                            </script>
                         </td>
                     </tr>
                 {% endfor %}

@@ -33,4 +33,13 @@ class ProductRepository extends EntityRepository
         return $query->getQuery()->getResult();
     }
 
+    public function findArray($array)
+    {
+        $query = $this->createQueryBuilder('p')
+            ->Select('p')
+            ->Where('p.id IN (:array)')
+            ->setParameter('array', $array);
+        return $query->getQuery()->getResult();
+    }
+
 }

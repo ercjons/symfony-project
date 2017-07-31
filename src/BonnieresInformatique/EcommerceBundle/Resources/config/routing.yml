@@ -18,3 +18,8 @@ ecommerce_sidebarLeft:
 ecommerce_services:
         path:     /services
         defaults: { _controller: EcommerceBundle:Default:service}
+
+ecommerce_error404:
+        path:     /error404
+        defaults: { _controller: EcommerceBundle:Default:error404}
+

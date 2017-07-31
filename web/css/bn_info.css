@@ -186,3 +186,24 @@ h3:hover{
     cursor:pointer;
 }
 
+/*product homepage*/
+.product_info h4{
+    background-color: #e1edf7;
+    padding:5px;
+    border-radius: 3px;
+    opacity: 0.6;
+}
+
+.product_info p{
+    background-color: #dedede;
+    padding:5px;
+    border-radius: 3px;
+}
+
+.price{
+    font-family: "Adobe Gothic Std B";
+    font-style: oblique;
+    font-weight: bold;
+    font-size: medium;
+}
+

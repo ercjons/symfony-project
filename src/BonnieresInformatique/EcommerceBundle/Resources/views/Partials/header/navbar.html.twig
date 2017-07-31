@@ -10,17 +10,17 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Bonnieres Informatique</a>
+                    <a class="navbar-brand animated flip" href="{{ path('ecommerce_homepage') }}">Bonnieres Informatique</a>
                 </div>
                 <hr class="hr">
                 {% render(controller('EcommerceBundle:Product:search')) %}
 
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav pull-left">
-                        <li class="active"><a href="{{ path('ecommerce_homepage') }}">Accueil</a></li>
-                        <li><a href="{{ path('ecommerce_product') }}">Produits</a></li>
-                        <li><a href="{{ path('ecommerce_services') }}">Nos services et Prestations</a></li>
-                        <li><a href="{{ path('ecommerce_contact') }}">Contact</a></li>
+                        <li class="active animated flip"><a href="{{ path('ecommerce_homepage') }}">Accueil</a></li>
+                        <li><a class="animated zoomInLeft" href="{{ path('ecommerce_product') }}">Produits</a></li>
+                        <li><a class="animated bounce" href="{{ path('ecommerce_services') }}">Nos services et Prestations</a></li>
+                        <li><a class="animated zoomIn" href="{{ path('ecommerce_contact') }}">Contact</a></li>
                     </ul>
                     <ul class="nav navbar-nav pull-right">
                         <li><a  class="btn btn-sm">

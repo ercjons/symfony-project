@@ -73,8 +73,8 @@ fos_user:
     registration:
             form:
                 type: bonnieres_informatique_user_registration
-#            confirmation:
-#                        enabled: true
+            confirmation:
+                        enabled: true
 #                        from_email:
 #                                      address: emiboyer75@gmail.com
 #                                      sender_name: Bonniere-Informatique
