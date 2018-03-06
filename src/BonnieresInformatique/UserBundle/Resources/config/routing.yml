@@ -1,5 +1,5 @@
 user_homepage:
-    path:     /
+    path:     /bibi
     defaults: { _controller: UserBundle:Default:index }
 
 fos_user_security:
