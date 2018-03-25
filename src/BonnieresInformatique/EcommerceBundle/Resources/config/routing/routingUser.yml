@@ -1,5 +1,5 @@
 ecommerce_homepage:
-    path:     /home
+    path:     /
     defaults: { _controller: EcommerceBundle:Default:index }
 
 ecommerce_contact:

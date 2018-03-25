@@ -1,5 +1,9 @@
 {% extends "@FOSUser/Template/layout/layout_register.html.twig" %}
 
 {% block fos_user_content %}
-{% include "FOSUserBundle:Registration:register_content.html.twig" %}
+
+    <div class="col-md-12">
+        {% include "FOSUserBundle:Registration:register_content.html.twig" %}
+    </div>
+
 {% endblock fos_user_content %}

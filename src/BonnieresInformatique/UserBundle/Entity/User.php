@@ -4,12 +4,14 @@ namespace BonnieresInformatique\UserBundle\Entity;
 
 use FOS\UserBundle\Entity\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
+use EWZ\Bundle\RecaptchaBundle\Validator\Constraints as Recaptcha;
 
 /**
  * User
  *
  * @ORM\Table(name="user")
  * @ORM\Entity(repositoryClass="BonnieresInformatique\UserBundle\Repository\UserRepository")
+ * @ORM\HasLifecycleCallbacks()
  */
 class User extends BaseUser
 {
@@ -21,6 +23,11 @@ class User extends BaseUser
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
+
+    /**
+     * @Recaptcha\IsTrue
+     */
+    public $recaptcha;
 
     /**
      * @ORM\OneToMany(targetEntity="BonnieresInformatique\EcommerceBundle\Entity\UserOrder", mappedBy="user",cascade={"remove"})

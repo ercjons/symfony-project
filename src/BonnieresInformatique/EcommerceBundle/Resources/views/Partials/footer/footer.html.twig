@@ -1,25 +1,36 @@
 <!-- FOOTER -->
-<div class="container">
-    <footer id="footer">
+<footer id="footer">
+    <div class="container">
         <div class="row">
-            <div class="col-md-8 pull-left leftBlock">
-                <p>&copy; Copyright {{ 'now'| date('Y') }} Bonnieres Informatique, Inc <br><br>
-                    {% render(controller('PagesBundle:Pages:module')) %}
-                    <a href=""><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
-                    <a href=""><i class="fa fa-github" aria-hidden="true"></i></a>
-                    <a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                    <a href=""><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+            <div class="col-md-4">
+                <h5>Bonnières informatique</h5>
+                <p><a href="">Accueil</a></p>
+                <p><a href="">Produits</a></p>
+                <p><a href="">Nos services</a></p>
+                <p><a href="">Contact</a></p>
             </div>
-            {#<div class="col-md-offset-2"></div>#}
-
-            <div class="col-md-3 pull-right text-center rightBlock">
-                <p> Nous contacter : <br><br>
-                    <i class="fa fa-address-card" aria-hidden="true"></i>{{ adresse  }}<br>
-                    {{ commune }}<br><br>
-                    <i class="fa fa-phone" aria-hidden="true"></i>Télephone :  {{ telephone }} <br>
-                    <i class="fa fa-fax" aria-hidden="true"></i>  Fax :  {{ fax }}
-                </p>
+            <div class="col-md-4">
+                <h5>Informations légales</h5>
+                <p><a href="#">CGV</a></p>
+                <p><a href="#">Mentions légales</a></p>
+                <p><a href="#">Droits et obligations</a></p>
+                <p><a href="#">SAV</a></p>
+            </div>
+            <div class="col-md-4">
+                <h5>Nous contacter</h5>
+                <span><i class="fa fa-address-card"></i> {{ adresse  }}</span>
+                <br>
+                <span>{{ commune }}</span><br><br>
+                <span><i class="fa fa-phone" aria-hidden="true"></i> Télephone : {{ telephone }}</span><br>
+                <span><i class="fa fa-fax" aria-hidden="true"></i> Fax :  {{ fax }}</span>
             </div>
         </div>
-    </footer>
-</div>
+        <hr>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p>&copy; Copyright {{ 'now'| date('Y') }} Bonnieres Informatique, Inc </p>
+            </div>
+        </div>
+    </div>
+</footer>
+

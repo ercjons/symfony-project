@@ -34,6 +34,12 @@ ecommerce_searchProduct:
     path:     /search
     defaults: {_controller: EcommerceBundle:Product:searchProduct}
 
+ecommerce_available:
+    path:     /avalaible/{id}
+    defaults: {_controller: EcommerceBundle:Product:avalaible}
+    requirements:
+        id: \d+
+
 ecommerce_addTva:
     path:     /addTva
     defaults: { _controller: EcommerceBundle:Tva:addTva}
@@ -48,13 +54,13 @@ ecommerce_editCategory:
     path:     /editCategory/{id}
     defaults: { _controller: EcommerceBundle:Category:editCategory}
     requirements:
-            id: \d+
+        id: \d+
 
 ecommerce_deleteCategory:
     path:     /deleteCategory/{id}
     defaults: { _controller: EcommerceBundle:Category:deleteCategory}
     requirements:
-            id: \d+
+        id: \d+
 
 #-------------------------------------------------------------
 
@@ -66,13 +72,13 @@ ecommerce_editBrand:
     path:     /editBrand/{id}
     defaults: { _controller: EcommerceBundle:Brand:editBrand}
     requirements:
-            id: \d+
+        id: \d+
 
 ecommerce_deleteBrand:
     path:     /deleteBrand/{id}
     defaults: { _controller: EcommerceBundle:Brand:deleteBrand}
     requirements:
-            id: \d+
+        id: \d+
 
 #-------------------------------------------------------------
 

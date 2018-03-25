@@ -85,7 +85,6 @@
                     <th  class="text-center">Mis en ligne</th>
                     <th  class="text-center">Disponibilité</th>
                     <th  class="text-center">Action</th>
-                    <th  class="text-center">On/off</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -110,10 +109,7 @@
                         </td>
                         <td>
                             <a href="{{ path('ecommerce_editProduct', {id:product.id}) }}" class="red-text" data-toggle="tooltip" data-placement="top" title="Modifier"><i class="fa fa-wrench"></i></a>&nbsp;
-                            <a href="{{ path('ecommerce_deleteProduct', {id:product.id}) }} class="red-text" data-toggle="tooltip" data-placement="top" title="supprimer"><i class="fa fa-trash-o"></i></a>
-                        </td>
-                        <td>
-                            <input type="checkbox" checked data-toggle="toggle">
+                            <a href="{{ path('ecommerce_deleteProduct', {id:product.id}) }}" class="red-text" data-toggle="tooltip" data-placement="top" title="supprimer"><i class="fa fa-trash-o"></i></a>
                         </td>
                     </tr>
                 {% endfor %}

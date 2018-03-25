@@ -75,9 +75,9 @@ fos_user:
                 type: bonnieres_informatique_user_registration
             confirmation:
                         enabled: true
-#                        from_email:
-#                                      address: emiboyer75@gmail.com
-#                                      sender_name: Bonniere-Informatique
+                        from_email:
+                                      address: emiboyer75@gmail.com
+                                      sender_name: Bonniere-Informatique
 
 knp_paginator:
     page_range: 5                      # default page range used in pagination control
@@ -89,3 +89,10 @@ knp_paginator:
     template:
         pagination: KnpPaginatorBundle:Pagination:twitter_bootstrap_v3_pagination.html.twig     # sliding pagination controls template
         sortable: KnpPaginatorBundle:Pagination:sortable_link.html.twig # sort link template
+
+ewz_recaptcha:
+    public_key:  6LdsD0oUAAAAACb6KcPcvHbHahPnLP_i7ZBSQsjv
+    private_key: 6LdsD0oUAAAAAKFRO3uWzYr_neGaTPG6AH3fT5Z8
+    locale_key:  %kernel.default_locale%
+    locale_from_request: true
+    verify_host: true

@@ -3,6 +3,7 @@
     <div class="container navbar-fixed-top">
         <nav class="navbar navbar-inverse">
             <div class="container bgnav">
+                <a class="navbar-brand text-white" href="{{ path('ecommerce_homepage') }}">Bn-info</a>
                 <div class="navbar-header ">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                         <span class="sr-only">Toggle navigation</span>
@@ -10,11 +11,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand animated flip" href="{{ path('ecommerce_homepage') }}">Bonnieres Informatique</a>
                 </div>
-                <hr class="hr">
-                {% render(controller('EcommerceBundle:Product:search')) %}
-
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav pull-left">
                         <li class="active animated flip"><a href="{{ path('ecommerce_homepage') }}">Accueil</a></li>
@@ -22,14 +19,9 @@
                         <li><a class="animated bounce" href="{{ path('ecommerce_services') }}">Nos services et Prestations</a></li>
                         <li><a class="animated zoomIn" href="{{ path('ecommerce_contact') }}">Contact</a></li>
                     </ul>
-                    <ul class="nav navbar-nav pull-right">
-                        <li><a  class="btn btn-sm">
-                            <span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart
-                            </a>
-                        </li>
-                    </ul>
                     {% if is_granted('ROLE_USER') %}
                         <ul class="nav navbar-nav pull-right text-right">
+                            <li><a href="{{ path('ecommerce_admin') }}">{{  app.user.username|capitalize}}</a></li>
                             <li class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">
                                 <a  href="{{ path('ecommerce_admin') }}">Mon compte<span class="caret"></span></a>
                             </li>
@@ -37,21 +29,23 @@
                                 <li><a href="{{ path('fos_user_profile_show') }}">Voir mon profil</a></li>
                                 <li><a href="{{ path('fos_user_security_logout') }}">{{ 'layout.logout'|trans({}, 'FOSUserBundle') }}</a></li>
                             </ul>
-                            <li><a href="{{ path('ecommerce_admin') }}">Welcome  {{  app.user.username }}</a></li>
                         </ul>
-                        {%  elseif is_granted('IS_AUTHENTICATED_ANONYMOUSLY') %}
-                            <ul class="nav navbar-nav pull-right text-right">
-                                <li class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">
-                                    <a  href="#">S'identifier<span class="caret"></span></a>
-                                </li>
-                                <ul class="dropdown-menu hover">
-                                    <li><a href="{{ path('fos_user_registration_register') }}">Créer un compte</a></li>
-                                    <li><a href="{{ path('fos_user_security_login') }}">Se connecter</a></li>
-                                </ul>
+                    {%  elseif is_granted('IS_AUTHENTICATED_ANONYMOUSLY') %}
+                        <ul class="nav navbar-nav pull-right text-right">
+                            <li class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">
+                                <a  href="#">S'identifier<span class="caret"></span></a>
+                            </li>
+                            <ul class="dropdown-menu hover">
+                                <li><a href="{{ path('fos_user_registration_register') }}">Créer un compte</a></li>
+                                <li><a href="{{ path('fos_user_security_login') }}">Se connecter</a></li>
                             </ul>
+                        </ul>
                     {% endif %}
                 </div>
             </div>
         </nav>
-    </div>  <!--fin div container-->
-</div>  <!--fin div navbar-->
+    </div>
+    <!--fin div container-->
+</div>
+<!--fin div navbar-->
+<!-- Image and text -->

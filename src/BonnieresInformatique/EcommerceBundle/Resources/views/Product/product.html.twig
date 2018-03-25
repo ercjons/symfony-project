@@ -6,34 +6,34 @@
         <div class="col-md-3">
             {% render(controller('EcommerceBundle:Category:sidebarLeft')) %}
         </div>
-            {#<p><h4>Nos produits</h4></p>#}
-
-    {% if product | length != 0 %}
-        {% for product in product %}
-        <div class="col-md-3">
-            <div class="thumbnail">
-                <img src="{{ asset(product.getWebPath) }}" alt="" class="img-responsive">
-                <div class="caption product_info">
-                    <h4>{{ product.brand.name }} {{ product.type }}</h4>
-                    <p>
-                       <span class="price">{{ product.price}} €</span>
-                    </p>
-                       <a href="{{ path('ecommerce_addCart',{id:product.id}) }}" class="btn btn-primary btn-sm">Ajouter au panier</a>
-                       <a href="{{ path('ecommerce_show',{id:product.id}) }}" class="btn btn-default btn-sm">Détails</a>
+        {% if product | length != 0 %}
+        <div class="col-md-9">
+            <div class="row">
+                {% for product in product %}
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                        <img src="{{ asset(product.getWebPath) }}" alt="" class="img-responsive">
+                        <div class="caption product_info">
+                            <h4>{{ product.brand.name }} {{ product.type }}</h4>
+                            <p>
+                                <span class="price">{{ product.price}} €</span>
+                            </p>
+                            <a href="{{ path('ecommerce_addCart',{id:product.id}) }}" class="btn btn-primary btn-sm">Ajouter au panier</a>
+                            <a href="{{ path('ecommerce_show',{id:product.id}) }}" class="btn btn-default btn-sm">Détails</a>
+                        </div>
+                    </div>
                 </div>
+                {% endfor %}
             </div>
         </div>
-        {% endfor %}
-
-    {% else %}
-        <div class="col-md-7 col-md-offset-3 text-center">
+        {% else %}
+        <div class="col-md-9 text-center">
             <div class="alert alert-warning text-center">
                 <p>Aucun produit</p>
             </div>
         </div>
-    {% endif %}
+        {% endif %}
     </div><!-- End/.row -->
-
     <div class="row text-center">
         <div class="col-md-12">
             {% include ('@Ecommerce/Partials/pagination/pagination.html.twig') %}

@@ -1,6 +1,7 @@
 <?php
 
 namespace BonnieresInformatique\UserBundle\Form;
+use EWZ\Bundle\RecaptchaBundle\Form\Type\EWZRecaptchaType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 
@@ -29,7 +30,23 @@ class RegistrationFormType extends AbstractType
                         'attr'=>array('class'=>'form-control')),
                     'invalid_message'
                     => 'fos_user.password.mismatch',
-                ));
+                ))
+            //reCaptcha
+            ->add('recaptcha', EWZRecaptchaType::class,array(
+                'attr'=>array(
+                    'option'=>array(
+                        'language' => 'en',
+                        'theme'=>'light',
+                        'type'=>'image',
+                        'size'=>'normal',
+                        'defer'=>true,
+                        'async'=>true,
+                        'callback' => 'onReCaptchaSuccess',
+                        'bind' => 'btn_submit',
+                    )
+                )
+            ));
+
     }
 
     public function getParent() {

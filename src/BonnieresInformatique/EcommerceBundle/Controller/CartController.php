@@ -34,7 +34,6 @@ class CartController extends Controller
                 $cart[$id] = $this->get('request')->query->get('quantity');
             else
                 $cart[$id] = 1;
-
             $this->get('session')->getFlashBag()->add('success','Article ajouté avec succès');
         }
 
@@ -56,9 +55,6 @@ class CartController extends Controller
 
         return $this->redirect($this->generateUrl('ecommerce_cart'));
     }
-
-
-
 
     public function validateAction()
     {

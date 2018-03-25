@@ -1,3 +1,23 @@
+body, html{
+    height: 100%;
+}
+
+body{
+    padding: 0;
+}
+
+.container{
+    max-width:1280px;
+    min-height:100%;
+    margin:0 auto;
+    position: relative;
+}
+
+#myCarousel{
+    padding: 0;
+    margin-top: 0;
+}
+
 #footer{
     margin-top: 20px;
     background-color: #3c3c3c;
@@ -6,11 +26,22 @@
     width:100%;
 }
 
-#footer p{
-    padding: 10px;
+#footer h5{
+    padding-top: 10px;
     color: white;
 }
 
+#footer p{
+    color: white;
+}
+
+#footer span{
+    color: darkgray;
+}
+
+#footer ul li{
+
+}
 
 /*sidebar left*/
 @import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
@@ -124,6 +155,13 @@ a:active, a:hover {
     margin-top: 15%;
 }
 
+.login_block{
+    margin: auto;
+    border: solid lightgrey 1px;
+    border-radius: 5px;
+    padding: 25px;
+}
+
 .checkmail{
     margin-top: 15%;
 }
@@ -132,8 +170,27 @@ a:active, a:hover {
     margin-top: 15%;
 }
 
+/*register*/
 .register{
     margin-top: 15%;
+}
+
+.register_form{
+    margin: auto;
+    border: solid lightgrey 1px;
+    border-radius: 5px;
+    padding: 25px;
+}
+
+.register_form p{
+    font-family: "Comic Sans MS", sans-serif;
+    font-size: medium;
+    text-align: center;
+}
+
+
+.register_submit{
+    width: 100%;
 }
 
 .resetting{
@@ -207,3 +264,114 @@ h3:hover{
     font-size: medium;
 }
 
+/*sidebar-css*/
+#sidebar a:hover{
+    background-color:#d00050;
+    color: white;
+}
+
+#sidebar img{
+    align-items: center;
+}
+
+#sidebar{
+    background-color:lightgrey!important;
+}
+
+#sidebar .list_group{
+    background-color:white!important;
+}
+
+#sidebar .profile p{
+    font-family: "Comic Sans MS", sans-serif;
+    font-weight: bold;
+}
+
+/*menu accordeon*/
+#sidebar-accordeon {
+    padding:0;
+    margin:0;
+    list-style:none;
+}
+
+#sidebar-accordeon .list{
+    padding: 10px;
+    border-radius: 2px;
+    font-family: "Comic Sans MS", sans-serif;
+    font-weight: 200;
+}
+
+#sidebar-accordeon .list:hover{
+    background-color:#d00050;
+    color: white;
+
+}
+
+#sidebar-accordeon ul {
+    padding:0;
+    margin:0;
+    list-style:none;
+    text-align: center;
+}
+
+#sidebar-accordeon .list_group li a{
+    padding: 10px;
+    margin:0;
+    text-align: left;
+    border: solid 1px beige;
+    font-family: "Comic Sans MS", sans-serif;
+    font-weight: 500;
+}
+
+#sidebar-accordeon .list_group li{
+    background-color:white;
+}
+
+#sidebar-accordeon li {
+    background-color: #f8f8f8;
+    border-radius: 2px;
+    margin:0;
+    padding: 0;
+    border:solid 1px beige;
+}
+
+#sidebar-accordeon li li {
+    max-height:0;
+    overflow: hidden;
+    transition: all .10s;
+    border-radius:0;
+    box-shadow: none;
+    border:none;
+    margin:0;
+    color: black;
+}
+
+#sidebar-accordeon a {
+    display:block;
+    text-decoration: none;
+    padding: 4px 0;
+    color: black;
+}
+
+#sidebar-accordeon .list_group li a:hover {
+    background-color:cornflowerblue ;
+    color: white;
+}
+
+#sidebar-accordeon ul li a, #sidebar-accordeon li:hover li a {
+    font-size:1em;
+}
+
+#sidebar-accordeon li li:hover {
+    background-color:#d00050;
+    color: white;
+}
+
+#sidebar-accordeon ul li:last-child {
+    border:none;
+}
+
+#sidebar-accordeon li:hover li {
+    max-height: 15em;
+    color: white;
+}

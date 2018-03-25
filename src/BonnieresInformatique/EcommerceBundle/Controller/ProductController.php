@@ -24,11 +24,10 @@ class ProductController extends Controller
         $paginator = $this->get('knp_paginator');
         $product =  $paginator->paginate(
             $productList,
-            $request->query->get('page', 1),5);
+            $request->query->get('page', 1),6);
 
         return $this->render('EcommerceBundle:Product:product.html.twig',['product' => $product]);
     }
-
 
     public function showAction($id)
     {
@@ -103,7 +102,7 @@ class ProductController extends Controller
         $paginator = $this->get('knp_paginator');
         $product =  $paginator->paginate(
             $productList,
-            $request->query->get('page', 1),2);
+            $request->query->get('page', 1),6);
 
 
 //        retourne une erreur 404 au cas où une catégorie n'existe pas
@@ -128,6 +127,7 @@ class ProductController extends Controller
         //ici on crée une méthode qui permet de récupérer les données
         // saisies dans le champs recherche
         $form = $this->createForm(SearchType::class);
+
         if($request->getMethod()=='POST'){
             $form->handleRequest($request);
             $em = $this->getDoctrine()->getManager();
@@ -136,12 +136,25 @@ class ProductController extends Controller
             $paginator = $this->get('knp_paginator');
             $product =  $paginator->paginate(
                 $productList,
-                $request->query->get('page', 1),5);
+                $request->query->get('page', 1),6);
         }else{
            // retourne une erreur 404
             throw $this->createNotFoundException('Impossible d\'afficher la page');
         }
         return $this->render('EcommerceBundle:Product:product.html.twig', ['product'=> $product]);
+    }
+
+    public function avalaibleAction(Product $product) {
+        if($this->get('security.authorization_checker')->isGranted('ROLE_SUPER_ADMIN')) {
+            if ($product->getAvailable()) $action = false;
+            if ($product->getAvailable() == false) $action = true;
+
+            $product->setAvailable($action);
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($product);
+            $em->flush();
+        }
+        return $this->redirect($this->generateUrl('ecommerce_addProduct'));
     }
 
 
